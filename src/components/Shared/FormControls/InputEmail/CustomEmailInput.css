@@ -1,0 +1,18 @@
+
+.email-field-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.email-field-input{
+ /* background-color: red; */
+}
+
+.email-field-label{
+    position: relative !important;
+    min-width: 100% !important;
+    top: none !important;
+    left: none !important;
+}

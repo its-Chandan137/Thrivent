@@ -1,0 +1,158 @@
+@import '../../Shared/common/css/colors.css';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sign-in-page-wrapper {
+  width: 1140px;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  gap: 16px;
+  border-radius: 12px;
+}
+
+.sign-in-content-wrapper {
+  display: flex;
+  flex: 1 100vw;
+  max-width: 100vw;
+  gap: 50px;
+  justify-content: center;
+}
+
+.sign-in-left-side-intro-image-wrapper {
+  object-fit: contain;
+  object-position: center;
+  position: relative;
+  background-color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  width: 40%;
+
+}
+
+.sign-in-left-side-intro-image-wrapper .formBackImage{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  max-height: 90vh;
+}
+
+.sign-in-left-side-intro-image-wrapper .setupPNG{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.label-with-input-field{
+  display: flex;
+  flex-direction: column;
+
+  label{
+    text-align: start;
+  }
+}
+
+.image-content-wrapper {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  color: white;
+
+  min-width: 80%;
+  text-align: start;
+}
+
+.image-content-wrapper > h1:first-child {
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+.image-content-wrapper > h1:nth-child(2) {
+  font-size: 50px;
+  font-weight: 500;
+  margin-top: -10px;
+}
+
+.sign-in-right-side-form-wrapper {
+  width: 40%;
+  padding: 48px 0px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.form-logo-wrapper {
+  max-width: 300px;
+}
+
+.form-logo-wrapper > img {
+  width: 100%;
+}
+
+.sign-in-form-content-wrapper {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px !important;
+}
+
+.form-subheading-wrapper {
+  margin-top: 30px;
+  text-align: start;
+}
+
+.form-subheading-wrapper > p {
+  margin-top: 16px;
+  width: 370px;
+}
+
+/* Style for the error message */
+.error-message {
+  color: red;
+  font-size: 14px;
+  text-align: start;
+}
+
+/* Style for the contained button using primary color */
+.MuiButton-contained {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  text-transform: none;
+  font-size: 16px;
+  padding: 8px 16px;
+}
+
+/* Style for links */
+.MuiLink-root {
+  color: var(--primary-color);
+  font-size: 14px;
+  margin-bottom: 16px;
+  text-align: end;
+}
+
+/* Style for text fields */
+.signin-text-field {
+  margin-top: 8px;
+}
+
+/* Material-UI specific styles from provided CSS */
+.css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input {
+  /* height: 0px !important; */
+}
+
+.css-18rqtra-MuiTypography-root-MuiLink-root {
+  text-align: end;
+}

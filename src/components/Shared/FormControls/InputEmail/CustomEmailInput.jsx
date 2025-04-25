@@ -18,7 +18,7 @@ const CustomEmailInput = ({
 }) => {
   return (
     <Box className="email-field-wrapper">
-      <InputLabel className='email-field-label' htmlFor={id} style={labelStyle}>
+      <InputLabel className="email-field-label" htmlFor={id} style={labelStyle}>
         {label}
       </InputLabel>
       <TextField

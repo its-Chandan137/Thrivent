@@ -11,13 +11,16 @@ import Unauthorized from '../components/Unauthorized\'/Unauthorized';
 import Login from '../components/AuthenticationModules/Login/Login';
 import CounsellorDashboard from '../components/CounsellorPortal/Dashboard/CounsellorDashboard';
 import ForgotPassword from '../components/AuthenticationModules/ForgotPassword/ForgotPassword';
+import SetPassword from '../components/AuthenticationModules/SetPassword/SetPassword';
 
 const AppRoutes = () => {
   return (
     <Routes>
       {/* <Route path="/" element={<StudentDashboard />} /> */}
       <Route path="/" element={<Login />} />
-      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/forgotpassword" element={<ForgotPassword />} />
+      <Route path="/setpassword" element={<SetPassword />} />
 
       <Route
         path="/student/dashboard"

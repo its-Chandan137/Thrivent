@@ -1,7 +1,6 @@
 #root {
     max-width: 1280px;
     margin: 0 auto;
-    text-align: center;
   }
 
 .container{
@@ -26,4 +25,8 @@
 .css-19qnlrw-MuiFormLabel-root-MuiInputLabel-root{
     /* -webkit-transform: translate(0px, 10px) scale(1) !important; */
     -webkit-transform: none !important;
+}
+
+.MuiFormHelperText-contained{
+    margin-left: 0 !important;
 }

@@ -40,9 +40,6 @@ const STATIC_USERS = [
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   const getDashboardRoute = (role) => {
@@ -59,8 +56,12 @@ const Login = () => {
     }
   };
 
-  const handleLogin = () => {
+  const handleLogin = (formData) => {
     setError('');
+
+    // Extract email and password from formData
+    const email = formData['email-id'];
+    const password = formData['password'];
 
     // Find user by email and password
     const user = STATIC_USERS.find(
@@ -88,16 +89,14 @@ const Login = () => {
       label: 'Email Id',
       placeholder: '@example.com',
       type: 'email',
-      value: email,
-      onChange: (e) => setEmail(e.target.value),
+      required: true, // Enforce required validation
       icon: 'mail',
     },
     {
       label: 'Password',
       placeholder: '**************',
       type: 'password',
-      value: password,
-      onChange: (e) => setPassword(e.target.value),
+      required: true, // Enforce required validation
       icon: 'lock',
     },
   ];
@@ -105,7 +104,7 @@ const Login = () => {
   const links = [
     {
       text: 'Forgot Password?',
-      href: '/forgot-password', // Placeholder for future Forgot Password page
+      href: '/forgotpassword',
     },
   ];
 

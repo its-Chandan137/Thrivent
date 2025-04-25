@@ -6,9 +6,10 @@ const ForgotPassword = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  const handleSubmit = () => {
+  const handleSubmit = (formData) => {
     setError('');
     setSuccess('');
+    const email = formData['email-id'];
     // Placeholder logic for password reset
     if (email) {
       setSuccess('Password reset link sent to your email.');
@@ -23,6 +24,7 @@ const ForgotPassword = () => {
       placeholder: '@example.com',
       type: 'email',
       value: email,
+      required: true,
       onChange: (e) => setEmail(e.target.value),
       icon: 'mail',
     },

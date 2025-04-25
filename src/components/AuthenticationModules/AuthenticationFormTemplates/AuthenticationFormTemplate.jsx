@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  FormControl,
-  FormLabel,
-  Button,
-  Link,
-} from '@mui/material';
-
+import { FormControl, Button, Link } from '@mui/material';
 import formBackImage from '../../../assets/images/AuthFormTemplateImage.png';
 import setupPNG from '../../../assets/images/setupPngImage.png';
 import formImage from '../../../assets/Images/Rightwise-logo.png';
@@ -14,6 +8,8 @@ import lockLogo from '../../../assets/Icons/lock-icon.svg';
 import CustomEmailInput from '../../Shared/FormControls/InputEmail/CustomEmailInput';
 import CustomPasswordInput from '../../Shared/FormControls/InputPassword/CustomPasswordInput';
 import './AuthenticationFormTemplate.css';
+import { useFormWithValidation } from '../../utils/formValidation';
+import { Controller } from 'react-hook-form';
 
 const AuthenticationFormTemplate = ({
   title = 'Let the Journey Begin!',
@@ -23,8 +19,9 @@ const AuthenticationFormTemplate = ({
   buttonText = 'Submit',
   onSubmit,
   error,
+  success,
 }) => {
-
+  const { control, handleSubmit, formState: { errors } } = useFormWithValidation(fields);
 
   return (
     <div className="centered-container">
@@ -53,40 +50,53 @@ const AuthenticationFormTemplate = ({
                   {error}
                 </div>
               )}
-              {fields.map((field, index) => (
-                <div className="label-with-input-field" key={index}>
-                  {/* <FormLabel>
-                    <span>{field.label}</span>
-                  </FormLabel> */}
-                  {field.icon === 'mail' ? (
-                    <CustomEmailInput
-                      label={field.label}
-                      name={field.label.toLowerCase().replace(' ', '-')}
-                      value={field.value}
-                      onChange={field.onChange}
-                      placeholder={field.placeholder}
-                      icon={field.icon}
-                      iconSrc={mailLogo}
-                    />
-                  ) : (
-                    <CustomPasswordInput
-                      label={field.label}
-                      name={field.label.toLowerCase().replace(' ', '-')}
-                      value={field.value}
-                      onChange={field.onChange}
-                      placeholder={field.placeholder}
-                      icon={field.icon}
-                      iconSrc={lockLogo}
-                    />
-                  )}
+              {success && (
+                <div className="success-message" style={{ color: 'green', marginBottom: '16px' }}>
+                  {success}
                 </div>
+              )}
+              {fields.map((field, index) => (
+                <Controller
+                  key={index}
+                  name={field.label.toLowerCase().replace(' ', '-')}
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <div className="label-with-input-field">
+                      {field.icon === 'mail' ? (
+                        <CustomEmailInput
+                          label={field.label}
+                          name={field.label.toLowerCase().replace(' ', '-')}
+                          value={value} // Use value from Controller
+                          onChange={onChange} // Use onChange from Controller
+                          placeholder={field.placeholder}
+                          icon={field.icon}
+                          iconSrc={mailLogo}
+                          error={errors[field.label.toLowerCase().replace(' ', '-')]?.message}
+                          helperText={errors[field.label.toLowerCase().replace(' ', '-')]?.message}
+                        />
+                      ) : (
+                        <CustomPasswordInput
+                          label={field.label}
+                          name={field.label.toLowerCase().replace(' ', '-')}
+                          value={value} // Use value from Controller
+                          onChange={onChange} // Use onChange from Controller
+                          placeholder={field.placeholder}
+                          icon={field.icon}
+                          iconSrc={lockLogo}
+                          error={errors[field.label.toLowerCase().replace(' ', '-')]?.message}
+                          helperText={errors[field.label.toLowerCase().replace(' ', '-')]?.message}
+                        />
+                      )}
+                    </div>
+                  )}
+                />
               ))}
               {links.map((link, index) => (
                 <Link key={index} href={link.href} underline="none">
                   {link.text}
                 </Link>
               ))}
-              <Button variant="contained" onClick={onSubmit}>
+              <Button variant="contained" onClick={handleSubmit(onSubmit)}>
                 {buttonText}
               </Button>
             </FormControl>

@@ -27,7 +27,7 @@ var i = 0;
         // onChange={handleInputChange}
         placeholder="Enter value"
       />
-      <Button className='secondary-button' sx={{ marginTop: 2 }} onClick={handleButtonClick}>
+      <Button className='primary-button' sx={{ marginTop: 2 }} onClick={handleButtonClick}>
         Click Me
       </Button>
     </Box>

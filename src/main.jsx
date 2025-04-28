@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import App from "./App.jsx";
-import store from "./store"; // Updated to default import
+import store from "./store";
 import { interceptor } from "./commonservices/APIRequests";
 import "./index.css";
 

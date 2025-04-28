@@ -3,15 +3,11 @@ import { toast } from "react-toastify";
 
 // Dynamic base URL based on environment
 const apiURL =
-  window.location.origin.indexOf("localhost") > -1
-    ? "https://dev.internbox.in/api/v1/"
-    : `${window.location.origin}/api/v1/`;
-
+  window.location.origin.indexOf("localhost") > -1 ? "https://dev.internbox.in/api/v1/" : `${window.location.origin}/api/v1/`;
 // Dynamic hostname for headers
-const hostName =
-  window.location.origin.indexOf("localhost") > -1
-    ? "https://dev.internbox.in/"
-    : window.location.host;
+const hostName = window.location.origin.indexOf("localhost") > -1 ? "https://dev.internbox.in/" : window.location.host;
+
+
 
 // Create Axios instance with base URL
 const axiosApiInstance = axios.create({ baseURL: apiURL });

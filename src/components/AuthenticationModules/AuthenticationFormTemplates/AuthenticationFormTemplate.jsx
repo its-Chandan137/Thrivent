@@ -98,7 +98,7 @@ const AuthenticationFormTemplate = ({
                   </Link>
                 </Box>
               ))}
-              <Button variant="contained" onClick={handleSubmit(onSubmit)}>
+              <Button variant="contained" className='primary-button' onClick={handleSubmit(onSubmit)}>
                 {buttonText}
               </Button>
             </FormControl>

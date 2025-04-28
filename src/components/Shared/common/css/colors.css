@@ -1,3 +1,42 @@
 :root {
-    --primary-color: #0071c1;
+
   }
+
+  :root {
+    --primary-color: #0071c1; /* Blue - Main buttons, modal headers, important texts */
+    --secondary-color: #00879E; /* Green - Rare, specific cases */
+    --gray-color: #B3B3B3; /* Gray - Cancel buttons, cross icons */
+    --dark-gray: #666; /* Gray - Cancel buttons, cross icons */
+    --light-gray: #D6D6D6; /* Lighter gray - Disabled buttons */
+    --bg-gray: #0000001f;
+    --shade-blue: #1976d223;
+    --alert-color: #BE3144; /* Red - Rare, specific cases */
+    --color-yellow: #FFAB5B; /* Red - Rare, specific cases */
+    --success-green: #65B741;
+    --purple-color: #500073;
+  }
+  
+  button.primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  button.secondary {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+  button.cancel {
+    background-color: var(--gray-color);
+    color: black;
+  }
+  
+  button:disabled {
+    background-color: var(--light-gray);
+    color: white;
+  }
+  
+  .alert {
+    color: var(--alert-color);
+  }
+  

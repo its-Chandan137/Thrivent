@@ -1,0 +1,126 @@
+/* Box Shadows */
+:root {
+    --box-shadow-default: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08);
+    --box-shadow-light: 0px 6px 12px rgba(0, 0, 0, 0.15), 0px 3px 6px rgba(0, 0, 0, 0.1);
+  }
+
+/* CONTAINERS */
+.container{
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centered-container{
+    width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+
+  /* ------------------- BUTTONS --------------------- */
+/* Custom Button Primary */
+.primary-button {
+    border-radius: 4px !important;
+    text-transform: none !important;
+    padding: 8px 15px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    cursor: pointer;
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: 2px solid var(--primary-color) !important;
+    box-shadow: var(--box-shadow-default) !important;
+    transition: all 0.3s ease-in-out;
+}
+
+/* .primary-button:hover {
+    background-color: white !important;
+    color: var(--primary-color) !important;
+    box-shadow: var(--box-shadow-light);
+} */
+
+.primary-button:active {
+    box-shadow: var(--box-shadow-default);
+}
+
+.primary-button:disabled {
+    border-radius: 4px !important;
+    text-transform: none !important;
+    padding: 8px 15px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    cursor: not-allowed !important;
+    background-color: #ccc !important;
+    color: var(--dark-gray) !important;
+    border: 2px solid transparent !important;
+    box-shadow: none !important;
+    opacity: 0.6;
+    transition: none;
+    pointer-events: none;
+}
+
+/* Custom Button Secondary */
+.secondary-button {
+    border-radius: 4px !important;
+    text-transform: none !important;
+    padding: 8px 15px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    cursor: pointer;
+    background-color: inherit !important;
+    color: var(--primary-color) !important;
+    border: 2px solid var(--primary-color) !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.secondary-button:hover {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+/* Custom Button Tertiary */
+.tertiary-button {
+    border-radius: 4px !important;
+    text-transform: none !important;
+    padding: 8px 15px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    cursor: pointer;
+    background-color: var(--gray-color) !important;
+    color: white !important;
+    border: 2px solid var(--gray-color) !important;
+    box-shadow: var(--box-shadow-default) !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.tertiary-button:hover {
+    box-shadow: var(--box-shadow-light);
+}
+
+.tertiary-button:active {
+    box-shadow: var(--box-shadow-default);
+}
+
+
+.disabled-button {
+    border-radius: 4px !important;
+    text-transform: none !important;
+    padding: 8px 15px !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    cursor: not-allowed !important;
+    background-color: #ccc !important;
+    color: var(--dark-gray) !important;
+    border: 2px solid transparent !important;
+    box-shadow: none !important;
+    opacity: 0.6;
+    transition: none;
+    pointer-events: none;
+}

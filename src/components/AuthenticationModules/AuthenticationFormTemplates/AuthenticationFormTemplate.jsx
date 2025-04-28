@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormControl, Button, Link } from '@mui/material';
+import { FormControl, Button, Link, Box } from '@mui/material';
 import formBackImage from '../../../assets/images/AuthFormTemplateImage.png';
 import setupPNG from '../../../assets/images/setupPngImage.png';
 import formImage from '../../../assets/Images/Rightwise-logo.png';
@@ -92,9 +92,11 @@ const AuthenticationFormTemplate = ({
                 />
               ))}
               {links.map((link, index) => (
-                <Link key={index} href={link.href} underline="none">
-                  {link.text}
-                </Link>
+                <Box key={index} className='text-end w-100'>
+                  <Link key={index} href={link.href} underline="none">
+                    {link.text}
+                  </Link>
+                </Box>
               ))}
               <Button variant="contained" onClick={handleSubmit(onSubmit)}>
                 {buttonText}

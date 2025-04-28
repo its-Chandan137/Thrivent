@@ -6,6 +6,11 @@ import CustomInputText from '../../Shared/FormControls/InputText/CustomInput';
 
 
 const Dashboard = () => {
+var i = 0;
+  const handleButtonClick = () => {
+    i = i + 1;
+    console.log("Button clicked!  " + i);
+  };
 
   return (
     <Box sx={{ padding: 4 }}>
@@ -22,7 +27,7 @@ const Dashboard = () => {
         // onChange={handleInputChange}
         placeholder="Enter value"
       />
-      <Button variant="contained" color="primary">
+      <Button className='secondary-button' sx={{ marginTop: 2 }} onClick={handleButtonClick}>
         Click Me
       </Button>
     </Box>

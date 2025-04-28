@@ -1,30 +1,17 @@
+@import './styles.css';
+@import './base.css';
+
 #root {
     max-width: 1280px;
     margin: 0 auto;
   }
 
-.container{
-    width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.centered-container{
-    width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    min-height: 100vh;
-}
 
 
 .css-19qnlrw-MuiFormLabel-root-MuiInputLabel-root{
     /* -webkit-transform: translate(0px, 10px) scale(1) !important; */
     -webkit-transform: none !important;
+    transform: none !important;
 }
 
 .MuiFormHelperText-contained{
